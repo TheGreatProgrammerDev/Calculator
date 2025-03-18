@@ -14,16 +14,17 @@ body {
     align-items: center;
     justify-content: center;
     background-color: rgb(255, 255, 255);
-    height: 100vh;
 }
 
 
 button {
-    width: 7rem;
-    height: 7rem;
+    width: 20vw;
+    height: 20vw;
+    max-width: 5rem;
+    max-height: 5rem;
     border-radius: 4rem;
     border:none;
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: rgb(38, 36, 36);
     color: white;
     font-weight: bold;
@@ -33,6 +34,8 @@ button {
 .keys {
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    gap : 5px;
+    padding : 10px;
 }
 
 .main {
@@ -44,12 +47,13 @@ button {
 
 .display {
     width: 100%;
-    padding: 20px;
-    font-size: 5rem;
+    padding: 15px;
+    font-size: 4rem;
     text-align: left;
     background-color: rgba(21, 21, 21, 0.536);
     color:white;
     border:none;
+    overflow-x: auto;
 }
 
 button:hover {
@@ -64,4 +68,27 @@ button:active {
 }
 .operator-btn:hover {
     background-color: rgb(251, 175, 103);
+}
+
+@media (max-width: 500px) {
+    .main {
+        max-width: 90vw; /* Reduce width to fit screen */
+        padding: 10px;
+    }
+    
+    .display {
+        font-size: 3rem; /* Reduce font size */
+        padding: 10px;
+    }
+
+    .keys {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px; /* Reduce gap */
+    }
+
+    button {
+        width: 22vw;
+        height: 22vw;
+        font-size: 1.8rem;
+    }
 }
